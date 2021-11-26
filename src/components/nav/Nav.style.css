@@ -209,9 +209,18 @@ a {
     color: #000;
   }
 
+  .nav__links__menu-item {
+  }
+
+  .nav__links__menu-item::before {
+      background-color: #000;
+  }
+
   .nav__links__menu > *, .nav__links__search, .nav__links-cart, .nav__links-wishlist {
     border: none;
-    padding: 1rem;
+    padding: .5rem 0;
+    margin: 0 1rem;
+    /* padding: 1rem; */
   }
 
   .nav__links > * {
@@ -228,7 +237,20 @@ a {
   }
 
   .nav__links__search__container {
-    border: 1px solid #000;
+    border: 1px solid #424242;
+    background-color: #424242;
+  }
+
+  .nav__links__search-input {
+    color: #fff;
+  }
+
+  .nav__links__search svg path {
+    fill: #fff;
+  }
+
+  .nav__links__search-input::placeholder {
+    color: #fff;
   }
   
   .nav__links-cart, .nav__links-wishlist {
