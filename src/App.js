@@ -1,9 +1,18 @@
 import './App.css';
-import Nav from './components/Nav';
+import Categories from './components/categories/Categories';
+import Hero from './components/hero/Hero';
+import Nav from './components/nav/Nav';
+import TopProducts from './components/topProducts/TopProducts';
 
 function App() {
   return (
-    <Nav />
+    <>
+      <Nav />
+      <Hero />
+      <TopProducts />
+      <Categories />
+    </>
+
   );
 }
 
