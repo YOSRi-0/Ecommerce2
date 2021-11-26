@@ -19,7 +19,7 @@
 }
 
 .nav {
-  padding: 0 2rem;
+  padding: 0 1rem;
 }
 
 /* ************************************ TYPOGRAPHY *********************************** */
@@ -183,7 +183,10 @@ a {
   stroke: #fff;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 992px) {
+  .nav {
+    padding: 0 2rem;
+  }
   .nav-logo {
     flex: 1;
   }
