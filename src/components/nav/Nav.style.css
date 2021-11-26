@@ -1,0 +1,239 @@
+#header {
+  width: 100vw;
+  height: 75px;
+  position: fixed;
+  z-index: 10;
+}
+
+#nav {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.nav.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  height: 100%;
+}
+
+.nav {
+  padding: 0 2rem;
+}
+
+/* ************************************ TYPOGRAPHY *********************************** */
+h1 {
+  font-size: 1.125rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+a {
+  font-size: 1rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+@media screen and (min-width: 768px) {
+
+}
+
+
+/* ************************************ LAYOUT *********************************** */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav__links {
+  padding-top: 1rem;
+  background-color: #000;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction:column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  position: absolute;
+  top: 75px;
+  left: 0; 
+  transform: translateX(-100%);
+  z-index: 0;
+  transition: transform 0.3s ease-in-out;
+}
+
+.nav__links.active {
+  transform: translateX(0);
+}
+
+.nav__links__menu {
+  color: #fff;
+}
+
+.nav__links > * {
+  width: 100vw;
+  border-top: 1px solid #424242;
+}
+
+.nav__links__menu-item {
+  padding: 1.5rem 2rem;
+  border-top: 1px solid #424242;
+  position: relative;
+  cursor: pointer;
+}
+
+.nav__links__menu-item::before {
+    content: '';
+    background-color: #fff;
+    width: 0%;
+    height: 2px;
+    margin: 0 auto;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    transition: width 0.3s ease-in-out;
+}
+
+.nav__links__menu-item:hover::before {
+  width: 100%;
+}
+
+.nav__links__menu-item:nth-of-type(1), .nav__links__menu {
+  border-top:none;
+}
+
+.nav__links__search {
+  padding: 1.5rem 2rem;
+  max-width: 500px;
+}
+
+.nav__links__search__container {
+  background-color: #fff;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  padding: .5rem 1rem;
+}
+
+.nav__links__search-input {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-size: .875rem;
+  flex: 3;
+}
+
+.nav__links__search-input::placeholder {
+  text-transform: uppercase;
+}
+
+.nav__links__search > svg {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.nav__links-cart, .nav__links-wishlist {
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+}
+
+.nav__links-cart::before, .nav__links-wishlist::before {
+    content: '';
+    background-color: #fff;
+    width: 0%;
+    height: 2px;
+    margin: 0 auto;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    transition: width 0.3s ease-in-out;
+}
+
+.nav__links-cart:hover::before, .nav__links-wishlist:hover::before {
+  width: 100%;
+}
+
+.nav__hamburger {
+  background-color: transparent;
+  border-radius: 50%;
+  border: none;
+}
+
+.nav__hamburger > svg {
+  fill: #fff;
+}
+
+.nav__hamburger > svg > circle {
+  stroke: #000;
+}
+
+.nav__hamburger:hover > svg {
+  fill: #E5E5E5;
+}
+
+.nav__hamburger:hover > svg > circle {
+  stroke: #fff;
+}
+
+@media screen and (min-width: 768px) {
+  .nav-logo {
+    flex: 1;
+  }
+  .nav__links {
+    background-color: transparent;
+    flex-direction:row;
+    position: static;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+    transform: translateX(0);
+    flex: 2;
+    padding-top: 0;
+  }
+
+  .nav__links__menu {
+    flex: 4;
+    display: flex;
+    align-items: center;
+    color: #000;
+  }
+
+  .nav__links__menu > *, .nav__links__search, .nav__links-cart, .nav__links-wishlist {
+    border: none;
+    padding: 1rem;
+  }
+
+  .nav__links > * {
+    width: 100%;
+  }
+
+  .nav__hamburger {
+    display: none;
+
+  }
+
+  .nav__links__search {
+    flex: 2;
+  }
+
+  .nav__links__search__container {
+    border: 1px solid #000;
+  }
+  
+  .nav__links-cart, .nav__links-wishlist {
+    width: auto;
+    justify-content: center;
+  }
+
+  .nav__links-cart > svg > path, .nav__links-wishlist > svg > path {
+    fill: #000 ;
+  }
+}
