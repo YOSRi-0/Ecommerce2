@@ -4,6 +4,7 @@ import Hero from './components/hero/Hero';
 import Nav from './components/nav/Nav';
 import Newsletters from './components/newsletter/Newsletter';
 import TopProducts from './components/topProducts/TopProducts';
+import Footer from './components/footer/Footer';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <TopProducts />
       <Categories />
       <Newsletters />
+      <Footer />
     </>
 
   );
