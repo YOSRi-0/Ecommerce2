@@ -17,11 +17,14 @@
     top: 0;
     z-index: 30;
     max-width: 95%;
-    min-height: 100%;
+    max-height: 100vh;
+    height: 100vh;
     margin-top: 75px;
     padding: 3rem 1rem 10rem;
     transform: translateX(-100%);
     transition: all 0.3s ease-in-out;
+    overflow: hidden;
+    overflow-y: scroll;
 }
 
 .products__content__sidebar.active {
@@ -62,3 +65,26 @@
     cursor: pointer;
 }
 
+
+@media screen and (min-width: 768px) {
+    .products__content__sidebar {
+        position: initial;
+        transform: translateX(0);
+        margin-top: 0;;
+        width: 100%;
+        height: auto;
+        padding-top: 0;
+    }
+
+    .filters__header {
+        display: none;
+    }
+
+    .filters__header-close {
+        display: none;
+    }
+
+    .backdrop {
+        display: none;
+    }
+}

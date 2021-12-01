@@ -79,3 +79,25 @@
     text-align: left;
 }
 
+.products__content__main__header-counter {
+    display: none;
+}
+
+
+@media screen and (min-width: 768px) {
+    .products__content__main {
+        flex: 4;
+        padding: 0 1rem;
+    }
+
+    .btn-select {
+        display: none;
+    }
+
+    .products__content__main__header-counter {
+        display: inline-block;
+        font-size: .8765rem;
+        color: #424242;
+    }
+
+}

@@ -20,8 +20,8 @@ const Products = () => {
   ]
 
   const options = [
-    {value: 'l2hprice', name: 'low to high price'},
-    {value: 'date', name: 'date'},
+    {value: 'l2hprice', name: 'Low To High Price'},
+    {value: 'date', name: 'Date'},
   ]
 
   const handleFilterClick = (e) => {
@@ -42,12 +42,13 @@ const Products = () => {
           <h2 className="products__header-title">All Products</h2>
         </div>
         <div className="products__content">
+          <Sidebar isActiveFilters={isActiveFilters}
+            list1={list1}
+            list2={list2}
+            onHandleFilterClick={handleFilterClick} />
           <div className="products__content__main">
-            <Sidebar isActiveFilters={isActiveFilters}
-              list1={list1}
-              list2={list2}
-              onHandleFilterClick={handleFilterClick} />
             <div className="products__content__main__header">
+              <span className="products__content__main__header-counter">33 products</span>
               <button className="btn-select" onClick={handleFilterClick}>Filter</button>
               <Select items={options} />
             </div>
