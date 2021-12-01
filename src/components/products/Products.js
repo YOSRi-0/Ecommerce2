@@ -48,9 +48,67 @@ const Products = () => {
             onHandleFilterClick={handleFilterClick} />
           <div className="products__content__main">
             <div className="products__content__main__header">
-              <span className="products__content__main__header-counter">33 products</span>
               <button className="btn-select" onClick={handleFilterClick}>Filter</button>
               <Select items={options} />
+              <span className="products__content__main__header-counter">33 products</span>
+            </div>
+            <div className="grid">
+              <div className="grid__item">
+                <div className="grid__item-img">
+                  <img src="https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_nashville_baseball_cap_1800x1800.jpg?v=1635033011" alt=""/>
+                </div>
+                <div className="grid__item__info">
+                  <h6 className="grid__item__info-title">Skinny jeans limited edition</h6>
+                  <p className="grid__item__info-price">$19.99</p>
+                </div>
+              </div>
+              <div className="grid__item">
+                <div className="grid__item-img">
+                  <img src="https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_nashville_baseball_cap_1800x1800.jpg?v=1635033011" alt=""/>
+                </div>
+                <div className="grid__item__info">
+                  <h6 className="grid__item__info-title">Skinny jeans limited edition</h6>
+                  <p className="grid__item__info-price">$19.99</p>
+                </div>
+              </div>
+              <div className="grid__item">
+                <div className="grid__item-img">
+                  <img src="https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_nashville_baseball_cap_1800x1800.jpg?v=1635033011" alt=""/>
+                </div>
+                <div className="grid__item__info">
+                  <h6 className="grid__item__info-title">Skinny jeans limited edition</h6>
+                  <p className="grid__item__info-price">$19.99</p>
+                </div>
+              </div>
+              <div className="grid__item">
+                <div className="grid__item-img">
+                  <img src="https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_nashville_baseball_cap_1800x1800.jpg?v=1635033011" alt=""/>
+                </div>
+                <div className="grid__item__info">
+                  <h6 className="grid__item__info-title">Skinny jeans limited edition</h6>
+                  <p className="grid__item__info-price">$19.99</p>
+                </div>
+              </div>
+              <div className="grid__item">
+                <div className="grid__item-img">
+                  
+                  <img src="https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_nashville_baseball_cap_1800x1800.jpg?v=1635033011" alt=""/>
+                </div>
+                <div className="grid__item__info">
+                  <h6 className="grid__item__info-title">Skinny jeans limited edition</h6>
+                  <p className="grid__item__info-price">$19.99</p>
+                </div>
+              </div>
+              <div className="grid__item">
+                <div className="grid__item-img">
+                  <img src="https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_nashville_baseball_cap_1800x1800.jpg?v=1635033011" alt=""/>
+
+                </div>
+                <div className="grid__item__info">
+                  <h6 className="grid__item__info-title">Skinny jeans limited edition</h6>
+                  <p className="grid__item__info-price">$19.99</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>

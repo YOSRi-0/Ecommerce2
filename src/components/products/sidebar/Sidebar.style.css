@@ -22,13 +22,13 @@
     margin-top: 75px;
     padding: 3rem 1rem 10rem;
     transform: translateX(-100%);
-    transition: all 0.3s ease-in-out;
     overflow: hidden;
     overflow-y: scroll;
 }
 
 .products__content__sidebar.active {
     transform: translateX(0);
+    transition: all 0.3s ease-in-out;
 }
 
 .filters {

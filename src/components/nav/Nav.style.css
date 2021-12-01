@@ -62,11 +62,11 @@ a {
   left: 0; 
   transform: translateX(-100%);
   z-index: 0;
-  transition: transform 0.3s ease-in-out;
 }
 
 .nav__links.active {
   transform: translateX(0);
+  transition: transform 0.3s ease-in-out;
 }
 
 .nav__links__menu {

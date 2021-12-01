@@ -1,5 +1,6 @@
 .sort-select {
     flex: 0 1 48%;
+    min-width: 140px;
     appearance: none;
     padding: .75rem 2rem .75rem 1rem;
     background-color: #fff;
