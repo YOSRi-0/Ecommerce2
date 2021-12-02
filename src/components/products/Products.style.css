@@ -14,14 +14,14 @@
 .products.container {
     max-width: 1440px;
     margin: 75px auto 0;
-    padding: 3rem 1rem 0;
+    padding: 2rem 1rem 0;
     overflow-x: hidden;
 }
 
 .products__header {
     flex-basis: 100%;
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
 
 .products__content {
@@ -121,6 +121,10 @@
 
 
 @media screen and (min-width: 768px) {
+    .products.container {
+        padding: 2rem 2rem 3rem;
+    }
+
     .products__content__main {
         flex: 4;
         padding: 0 1rem;
