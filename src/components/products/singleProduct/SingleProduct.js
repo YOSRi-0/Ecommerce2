@@ -7,7 +7,7 @@ const SingleProduct = () => {
   const colors = ['tomato', 'cornflowerblue', 'cadetblue']
 
   return (
-    <section className="product">
+    <section id="product">
       <div className="product container">
         <div className="product__path">
           <a href="" className="product__path-link">home</a>

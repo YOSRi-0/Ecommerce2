@@ -5,8 +5,9 @@ import './App.css';
 // import Newsletters from './components/newsletter/Newsletter';
 // import TopProducts from './components/topProducts/TopProducts';
 // import Footer from './components/footer/Footer';
-import Products from './components/products/Products'
-import SingleProduct from './components/products/singleProduct/SingleProduct'
+import Products from './components/products/Products';
+import SingleProduct from './components/products/singleProduct/SingleProduct';
+import Cart from './components/cart/Cart';
 
 import Home from './pages/Home';
 import { Nav, Newsletter, Footer } from './components';
@@ -16,8 +17,9 @@ function App() {
     <>
       <Nav />
       {/* <Home /> */}
-      <SingleProduct />
+      {/* <SingleProduct /> */}
       {/* <Products /> */}
+      <Cart />
       <Newsletter />
       <Footer />
     </>
