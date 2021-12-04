@@ -1,13 +1,11 @@
 import React from "react";
-import './Categories.style.css'
+import "./Categories.style.css";
 
 const Categories = (props) => {
   return (
     <section id="categories">
       <div className="categories container">
-        <div className="categories-heading">
-          Categories
-        </div>
+        <div className="categories-heading">Categories</div>
         <div className="categories__content">
           <div className="categories__category">
             <button className="btn btn-light">shop men</button>
@@ -17,8 +15,8 @@ const Categories = (props) => {
           </div>
         </div>
       </div>
-    </section> 
-  )
-}
+    </section>
+  );
+};
 
-export default Categories
+export default Categories;

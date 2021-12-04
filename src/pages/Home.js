@@ -1,7 +1,6 @@
-import React from 'react'
+import React from "react";
 
-import { Hero, TopProducts, Categories} from '../components'
-
+import { Hero, TopProducts, Categories } from "../components";
 
 const Home = () => {
   return (
@@ -10,7 +9,7 @@ const Home = () => {
       <TopProducts />
       <Categories />
     </>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

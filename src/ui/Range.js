@@ -1,13 +1,13 @@
-import React, {useState} from "react";
-import './Range.style.css'
+import React, { useState } from "react";
+import "./Range.style.css";
 
 const Range = () => {
   const maxValue = 300;
   const [rangeValue, setRangeValue] = useState(maxValue);
 
   const handleChange = (e) => {
-    setRangeValue(e.target.value)
-  }
+    setRangeValue(e.target.value);
+  };
 
   return (
     <div className="range">
@@ -27,8 +27,7 @@ const Range = () => {
         onChange={handleChange}
       />
     </div>
-  )
+  );
+};
 
-}
-
-export default Range
+export default Range;

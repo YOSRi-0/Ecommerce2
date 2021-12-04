@@ -1,7 +1,7 @@
 import React from "react";
-import "./TopProduct.style.css"
+import "./TopProduct.style.css";
 
-const TopProduct = ({product}) => {
+const TopProduct = ({ product }) => {
   return (
     <article className="top-product">
       <div className="top-product__image">
@@ -12,7 +12,7 @@ const TopProduct = ({product}) => {
         <p className="top-product__content-price">${product.price}</p>
       </div>
     </article>
-  )
-}
+  );
+};
 
-export default TopProduct
+export default TopProduct;

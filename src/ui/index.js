@@ -1,10 +1,10 @@
-export {default as ButtonCollapsing} from './ButtonCollapsing'
-export {default as CartIcon} from './CartIcon'
-export {default as Checkbox} from './Checkbox'
-export {default as CheckboxList} from './CheckboxList'
-export {default as Color} from './Color'
-export {default as HamburgerIcon} from './HamburgerIcon'
-export {default as Range} from './Range'
-export {default as SearchIcon} from './SearchIcon'
-export {default as Select} from './Select'
-export {default as WishlistIcon} from './WishlistIcon'
+export { default as ButtonCollapsing } from "./ButtonCollapsing";
+export { default as CartIcon } from "./CartIcon";
+export { default as Checkbox } from "./Checkbox";
+export { default as CheckboxList } from "./CheckboxList";
+export { default as Color } from "./Color";
+export { default as HamburgerIcon } from "./HamburgerIcon";
+export { default as Range } from "./Range";
+export { default as SearchIcon } from "./SearchIcon";
+export { default as Select } from "./Select";
+export { default as WishlistIcon } from "./WishlistIcon";

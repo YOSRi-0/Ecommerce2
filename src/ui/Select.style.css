@@ -1,25 +1,25 @@
 .sort-select {
-    flex: 0 1 48%;
-    min-width: 140px;
-    appearance: none;
-    padding: .75rem 2rem .75rem 1rem;
-    background-color: #fff;
-    border: 1px solid #000;
-    border-radius: 3px;
-    outline: none;
-    font-size: .875rem;
-    font-weight: 300;
-    letter-spacing: 1px;
-    text-align: left;
-    cursor: pointer;
-    background-image: url("//cdn.shopify.com/s/files/1/0339/0901/t/29/assets/ico-select.svg");
-    background-repeat: no-repeat;
-    background-position: right 10px center;
-    background-size: 11px;
+  flex: 0 1 48%;
+  min-width: 140px;
+  appearance: none;
+  padding: 0.75rem 2rem 0.75rem 1rem;
+  background-color: #fff;
+  border: 1px solid #000;
+  border-radius: 3px;
+  outline: none;
+  font-size: 0.875rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+  text-align: left;
+  cursor: pointer;
+  background-image: url("//cdn.shopify.com/s/files/1/0339/0901/t/29/assets/ico-select.svg");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 11px;
 }
 
 @media screen and (min-width: 768px) {
-    .sort-select {
-        flex: 0;
-    }
+  .sort-select {
+    flex: 0;
+  }
 }

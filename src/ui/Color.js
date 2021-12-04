@@ -1,13 +1,12 @@
 import React from "react";
-import './Color.style.css'
+import "./Color.style.css";
 
-const Color = ( { color }) => {
-  
+const Color = ({ color }) => {
   return (
     <>
-      <div style={{backgroundColor : color}} className="color"></div>
+      <div style={{ backgroundColor: color }} className="color"></div>
     </>
-  )
-}
+  );
+};
 
-export default Color
+export default Color;
