@@ -2,8 +2,8 @@ import React, {useState} from "react";
 import './Range.style.css'
 
 const Range = () => {
-  const [rangeValue, setRangeValue] = useState(0);
   const maxValue = 300;
+  const [rangeValue, setRangeValue] = useState(maxValue);
 
   const handleChange = (e) => {
     setRangeValue(e.target.value)
@@ -23,6 +23,7 @@ const Range = () => {
         step="5"
         min="0"
         max="300"
+        value={rangeValue}
         onChange={handleChange}
       />
     </div>

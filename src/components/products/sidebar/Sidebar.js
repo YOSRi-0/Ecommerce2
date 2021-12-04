@@ -1,17 +1,14 @@
 import React from "react";
 import './Sidebar.style.css'
 
-import ButtonCollapsing from '../../../ui/ButtonCollapsing'
-import CheckboxList from '../../../ui/CheckboxList'
-import Range from "../../../ui/Range";
-import Color from "../../../ui/Color";
+import {ButtonCollapsing, CheckboxList, Range, Color} from '../../../ui'
 
-const Sidebar = ( {isActiveFilters, list1, list2, onHandleFilterClick} ) => {
+const Sidebar = ( { isActiveFilters, availability, sizes, colors, onHandleFilterClick } ) => {
 
   return (
     <>
       {isActiveFilters && 
-          <div className="backdrop" onClick={onHandleFilterClick}></div>
+      <div className="backdrop" onClick={onHandleFilterClick}></div>
       }
       <div className={`products__content__sidebar ${isActiveFilters ? 'active' : ''}`}>
         <div className="filters">
@@ -21,26 +18,26 @@ const Sidebar = ( {isActiveFilters, list1, list2, onHandleFilterClick} ) => {
           </div>
           <form className="filters__form">
             <div className="filters__form-control">
-              <ButtonCollapsing title="availability" height={list1.length * 30 - 12}>
-                <CheckboxList list={list1}/>
+              <ButtonCollapsing title="availability" height={availability.length * 30 - 12}>
+                <CheckboxList list={availability}/>
               </ButtonCollapsing>
-          </div>
-          <div className="filters__form-control">
-              <ButtonCollapsing title="price">
+            </div>
+            <div className="filters__form-control">
+              <ButtonCollapsing title="price" height={sizes.length * 30 - 12}>
                 <Range />
               </ButtonCollapsing>
-         </div> 
-          <div className="filters__form-control">
-              <ButtonCollapsing title="color" >
-                <Color color="red" />
-            </ButtonCollapsing>
-          </div> 
+            </div>
             <div className="filters__form-control">
-              <ButtonCollapsing title="size">
-              <CheckboxList list={list2}/>
-            </ButtonCollapsing>
-          </div> 
-        </form>
+              <ButtonCollapsing title="color" height={30}>
+                {colors.map(color => <Color color={color} />)}
+              </ButtonCollapsing>
+            </div> 
+            <div className="filters__form-control">
+              <ButtonCollapsing title="size"  height={sizes.length * 30 - 12}>
+                <CheckboxList list={sizes}/>
+              </ButtonCollapsing>
+            </div> 
+          </form>
         </div>
       </div>
     </>

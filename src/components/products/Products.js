@@ -1,23 +1,17 @@
 import React, { useState } from 'react'
-import Select from '../../ui/Select';
+import {Select} from '../../ui';
 import './Products.style.css'
+
+import {filters, products} from '../../data'
 
 import Sidebar from './sidebar/Sidebar'
 
 const Products = () => {
 
   const [isActiveFilters, setIsActiveFilters] = useState(false);
-  
-  const list1 = [
-    {value: 'in-stock', name: 'In stock'},
-    {value: 'out-of-stock', name: 'Out of stock'},
-  ]
-
-  const list2 = [
-    {value: 'small', name: 'small'},
-    {value: 'medium', name: 'medium'},
-    {value: 'large', name: 'large'},
-  ]
+  const availability = filters.availability
+  const sizes = filters.sizes
+  const colors = filters.colors
 
   const options = [
     {value: 'l2hprice', name: 'Low To High Price'},
@@ -43,8 +37,9 @@ const Products = () => {
         </div>
         <div className="products__content">
           <Sidebar isActiveFilters={isActiveFilters}
-            list1={list1}
-            list2={list2}
+            availability={availability}
+            sizes={sizes}
+            colors={colors}
             onHandleFilterClick={handleFilterClick} />
           <div className="products__content__main">
             <div className="products__content__main__header">
@@ -53,62 +48,17 @@ const Products = () => {
               <span className="products__content__main__header-counter">33 products</span>
             </div>
             <div className="grid">
-              <div className="grid__item">
-                <div className="grid__item-img">
-                  <img src="https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_nashville_baseball_cap_1800x1800.jpg?v=1635033011" alt=""/>
+              {products.map((product) => 
+                <div key={product.id} className="grid__item">
+                  <div className="grid__item-img">
+                    <img src="https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_nashville_baseball_cap_1800x1800.jpg?v=1635033011" alt=""/>
+                  </div>
+                  <div className="grid__item__info">
+                    <h6 className="grid__item__info-title">Skinny jeans limited edition</h6>
+                    <p className="grid__item__info-price">$19.99</p>
+                  </div>
                 </div>
-                <div className="grid__item__info">
-                  <h6 className="grid__item__info-title">Skinny jeans limited edition</h6>
-                  <p className="grid__item__info-price">$19.99</p>
-                </div>
-              </div>
-              <div className="grid__item">
-                <div className="grid__item-img">
-                  <img src="https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_nashville_baseball_cap_1800x1800.jpg?v=1635033011" alt=""/>
-                </div>
-                <div className="grid__item__info">
-                  <h6 className="grid__item__info-title">Skinny jeans limited edition</h6>
-                  <p className="grid__item__info-price">$19.99</p>
-                </div>
-              </div>
-              <div className="grid__item">
-                <div className="grid__item-img">
-                  <img src="https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_nashville_baseball_cap_1800x1800.jpg?v=1635033011" alt=""/>
-                </div>
-                <div className="grid__item__info">
-                  <h6 className="grid__item__info-title">Skinny jeans limited edition</h6>
-                  <p className="grid__item__info-price">$19.99</p>
-                </div>
-              </div>
-              <div className="grid__item">
-                <div className="grid__item-img">
-                  <img src="https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_nashville_baseball_cap_1800x1800.jpg?v=1635033011" alt=""/>
-                </div>
-                <div className="grid__item__info">
-                  <h6 className="grid__item__info-title">Skinny jeans limited edition</h6>
-                  <p className="grid__item__info-price">$19.99</p>
-                </div>
-              </div>
-              <div className="grid__item">
-                <div className="grid__item-img">
-                  
-                  <img src="https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_nashville_baseball_cap_1800x1800.jpg?v=1635033011" alt=""/>
-                </div>
-                <div className="grid__item__info">
-                  <h6 className="grid__item__info-title">Skinny jeans limited edition</h6>
-                  <p className="grid__item__info-price">$19.99</p>
-                </div>
-              </div>
-              <div className="grid__item">
-                <div className="grid__item-img">
-                  <img src="https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_nashville_baseball_cap_1800x1800.jpg?v=1635033011" alt=""/>
-
-                </div>
-                <div className="grid__item__info">
-                  <h6 className="grid__item__info-title">Skinny jeans limited edition</h6>
-                  <p className="grid__item__info-price">$19.99</p>
-                </div>
-              </div>
+              )}
             </div>
           </div>
         </div>

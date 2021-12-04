@@ -1,8 +1,14 @@
 import React from "react";
+import {useParams} from "react-router-dom";
 import './SingleProduct.style.css'
-import Color from '../../../ui/Color'
+
+import {Color} from '../../../ui'
+import {products} from "../../../data";
 
 const SingleProduct = () => {
+  const {id} = useParams();
+  
+  const product = products.filter(p => p.id === id)
 
   const colors = ['tomato', 'cornflowerblue', 'cadetblue']
 
@@ -25,10 +31,10 @@ const SingleProduct = () => {
           <div className="product__content__block">
             <div className="product__content__block__row">
               <h3 className="product__content__block__row-title">
-                Skinny jeans limited edition
+                {product.title}
               </h3>
               <p className="product__content__block__row-price">
-                $ 19.99
+                $ {product.price}
               </p>
             </div>
             <div className="product__content__block__row">
@@ -36,7 +42,7 @@ const SingleProduct = () => {
                 color
               </p>
               <div className="colors">
-                {colors.map(color => <Color color={color} />)}
+                {colors.map((color, idx) => <Color key={idx} color={color} />)}
               </div>
             </div>
             <div className="product__content__block__row">

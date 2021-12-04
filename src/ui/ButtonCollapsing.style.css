@@ -21,6 +21,8 @@
     position: relative;
     overflow: hidden;
     transition: all .3s ease-in-out;
+    display: flex;
+    align-items: center;
 } 
 
 .list-collapse.active { 
