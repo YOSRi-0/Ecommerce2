@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import { Select } from "../../ui";
 import "./Products.style.css";
 
 import { filters, products } from "../../data";
-
-import Sidebar from "./sidebar/Sidebar";
+import { Product, Sidebar } from "../../components";
+import { Select } from "../../ui";
 
 const Products = () => {
   const [isActiveFilters, setIsActiveFilters] = useState(false);
@@ -57,20 +56,7 @@ const Products = () => {
             </div>
             <div className="grid">
               {products.map((product) => (
-                <div key={product.id} className="grid__item">
-                  <div className="grid__item-img">
-                    <img
-                      src="https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_nashville_baseball_cap_1800x1800.jpg?v=1635033011"
-                      alt=""
-                    />
-                  </div>
-                  <div className="grid__item__info">
-                    <h6 className="grid__item__info-title">
-                      Skinny jeans limited edition
-                    </h6>
-                    <p className="grid__item__info-price">$19.99</p>
-                  </div>
-                </div>
+                <Product key={product.id} product={product} />
               ))}
             </div>
           </div>

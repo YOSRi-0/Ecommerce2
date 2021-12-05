@@ -46,8 +46,8 @@ const Sidebar = ({
             </div>
             <div className="filters__form-control">
               <ButtonCollapsing title="color" height={30}>
-                {colors.map((color) => (
-                  <Color color={color} />
+                {colors.map((color, id) => (
+                  <Color key={id} color={color} />
                 ))}
               </ButtonCollapsing>
             </div>

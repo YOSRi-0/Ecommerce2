@@ -1,12 +1,12 @@
 export const filters = {
   availability: [
-    { value: "in-stock", name: "In stock" },
-    { value: "out-of-stock", name: "Out of stock" },
+    { id: 1, value: "in-stock", name: "In stock" },
+    { id: 2, value: "out-of-stock", name: "Out of stock" },
   ],
   sizes: [
-    { value: "small", name: "small" },
-    { value: "medium", name: "medium" },
-    { value: "large", name: "large" },
+    { id: 1, value: "small", name: "small" },
+    { id: 2, value: "medium", name: "medium" },
+    { id: 3, value: "large", name: "large" },
   ],
   colors: ["red", "orange", "green"],
 };

@@ -2,8 +2,8 @@ import React from "react";
 import {useParams} from "react-router-dom";
 import './SingleProduct.style.css'
 
-import {Color} from '../../../ui'
-import {products} from "../../../data";
+import {Color} from '../../ui'
+import {products} from "../../data";
 
 const SingleProduct = () => {
   const {id} = useParams();

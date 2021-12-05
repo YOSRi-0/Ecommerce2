@@ -4,3 +4,8 @@ export { default as TopProducts } from "./topProducts/TopProducts";
 export { default as Categories } from "./categories/Categories";
 export { default as Newsletter } from "./newsletter/Newsletter";
 export { default as Footer } from "./footer/Footer";
+export { default as Products } from "./products/Products";
+export { default as SingleProduct } from "./singleProduct/SingleProduct";
+export { default as Cart } from "./cart/Cart";
+export { default as Product } from "./products/product/Product";
+export { default as Sidebar } from "./products/sidebar/Sidebar";

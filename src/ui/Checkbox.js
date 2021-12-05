@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Checkbox.style.css";
 
-const Checkbox = ({ key, item }) => {
+const Checkbox = ({ item }) => {
   const [checked, setChecked] = useState(false);
 
   const handleClick = (e) => {
@@ -9,13 +9,12 @@ const Checkbox = ({ key, item }) => {
   };
 
   return (
-    <li className="list-item" key={key}>
-      <label htmlFor={key} className="list-item-wrapper">
+    <li className="list-item">
+      <label htmlFor={item.id} className="list-item-wrapper">
         <input
           className="list-item-input"
           type="checkbox"
           value={item.value}
-          key={key}
           onChange={handleClick}
         />
         <span className="list-item-checkbox"></span>

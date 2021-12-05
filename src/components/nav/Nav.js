@@ -27,8 +27,8 @@ const Nav = (props) => {
           </h1>
           <div className={`nav__links ${toggle ? "active" : ""}`}>
             <ul className="nav__links__menu">
-              {pages.map((page) => (
-                <li className="nav__links__menu-item">
+              {pages.map((page, id) => (
+                <li key={id} className="nav__links__menu-item">
                   <Link to={page.path} onClick={resetToggle}>
                     {page.name}
                   </Link>
