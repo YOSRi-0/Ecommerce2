@@ -18,6 +18,9 @@ export const products = [
     price: 19.199,
     image:
       "https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_nashville_baseball_cap_1800x1800.jpg?v=1635033011",
+    inStock: true,
+    sizes: ["small"],
+    colors: ["red"],
   },
   {
     id: 2,
@@ -25,6 +28,9 @@ export const products = [
     price: 19.199,
     image:
       "https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_nashville_baseball_cap_1800x1800.jpg?v=1635033011",
+    inStock: false,
+    sizes: ["medium"],
+    colors: ["orange"],
   },
   {
     id: 3,
@@ -32,6 +38,9 @@ export const products = [
     price: 19.199,
     image:
       "https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_nashville_baseball_cap_1800x1800.jpg?v=1635033011",
+    inStock: true,
+    sizes: ["large"],
+    colors: ["green"],
   },
   {
     id: 4,
@@ -39,6 +48,9 @@ export const products = [
     price: 19.199,
     image:
       "https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_nashville_baseball_cap_1800x1800.jpg?v=1635033011",
+    inStock: true,
+    sizes: ["large"],
+    colors: ["green"],
   },
   {
     id: 5,
@@ -46,6 +58,9 @@ export const products = [
     price: 19.199,
     image:
       "https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_nashville_baseball_cap_1800x1800.jpg?v=1635033011",
+    inStock: true,
+    sizes: ["large"],
+    colors: ["green"],
   },
 ];
 
