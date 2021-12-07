@@ -40,18 +40,34 @@ const removeAvailability = (availability, state) => {
   return { ...state, filters: updatedFilters };
 };
 
-// const addColor = (color, state) => {
-//   const updatedFilters = state.filters;
-//   const updatedFiltersIndex = getFilterIndex(color, updatedFilters.colors);
+const addColor = (color, state) => {
+  const updatedFilters = state.filters;
+  const updatedFiltersIndex = getFilterIndex(color, updatedFilters.colors);
 
-//   updatedFiltersIndex < 0
-//     ? updatedFilters.colors.push(color)
-//     : console.log("item exists");
+  if (updatedFiltersIndex < 0) {
+    updatedFilters.colors.push(color);
+  } else {
+    console.log("item exists");
+  }
 
-//   // console.log("state: ", { ...state.filters });
+  // console.log("state: ", { ...state.filters });
 
-//   return { ...state, filters: updatedFilters };
-// };
+  return { ...state, filters: updatedFilters };
+};
+
+const removeColor = (color, state) => {
+  const updatedFilters = state.filters;
+  const updatedFiltersIndex = getFilterIndex(color, updatedFilters.colors);
+
+  if (updatedFiltersIndex < 0) {
+    console.log("item does not exist");
+    return;
+  }
+
+  updatedFilters.colors.splice(updatedFiltersIndex, 1);
+
+  return { ...state, filters: updatedFilters };
+};
 
 const addSize = (size, state) => {
   const updatedFilters = state.filters;
@@ -95,8 +111,10 @@ export const filterReducer = (state, action) => {
       return addAvailability(action.availability, state);
     case REMOVE_AVAILABILITY:
       return removeAvailability(action.availability, state);
-    // case ADD_COLOR:
-    //   return addColor(action.color, state);
+    case ADD_COLOR:
+      return addColor(action.color, state);
+    case REMOVE_COLOR:
+      return removeColor(action.color, state);
     case ADD_SIZE:
       return addSize(action.size, state);
     case REMOVE_SIZE:

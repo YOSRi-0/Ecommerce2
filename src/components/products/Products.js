@@ -10,12 +10,22 @@ const Products = () => {
   const filterContext = useContext(FilterContext);
   const { availability, colors, sizes } = filterContext.filters;
   const [filterAvailability, setFilterAvailability] = useState(availability);
-  const [filterSizes, setFilterColors] = useState(sizes);
+  const [filterSizes, setFilterSizes] = useState(sizes);
+  const [filterColors, setFilterColors] = useState(colors);
 
   useEffect(() => {
     const checkSizes = (product) => {
-      for (let s of product.sizes) {
-        if (filterSizes.includes(s)) {
+      for (let size of product.sizes) {
+        if (filterSizes.includes(size)) {
+          return true;
+        }
+      }
+      return false;
+    };
+
+    const checkColors = (product) => {
+      for (let color of product.colors) {
+        if (filterColors.includes(color)) {
           return true;
         }
       }
@@ -29,7 +39,9 @@ const Products = () => {
         filterAvailability.includes(product.Stock);
 
       const sizesConditions = filterSizes.length === 0 || checkSizes(product);
-      return availabilityConditions && sizesConditions;
+      const colorsConditions =
+        filterColors.length === 0 || checkColors(product);
+      return availabilityConditions && sizesConditions && colorsConditions;
     });
     setUpdatedProducts(newProducts);
   }, [
@@ -37,6 +49,8 @@ const Products = () => {
     filterAvailability,
     filterSizes.length,
     filterSizes,
+    filterColors.length,
+    filterColors,
   ]);
 
   return (
