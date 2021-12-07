@@ -1,13 +1,38 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./Checkbox.style.css";
+import FilterContext from "../context/filter-context";
 
-const Checkbox = ({ item }) => {
+const Checkbox = ({ type, item }) => {
   const [isChecked, setIsChecked] = useState(false);
-
   const handleClick = () => {
     setIsChecked(!isChecked);
   };
-  console.log(isChecked);
+
+  const filterContext = useContext(FilterContext);
+
+  const onAddFilter = () => {
+    type === "AVAILABILITY" && filterContext.addAvailability(item.value);
+    type === "SIZE" && filterContext.addSize(item.value);
+  };
+  const onRemoveFilter = () => {
+    if (type === "AVAILABILITY") {
+      const length = filterContext.filters.availability.length;
+      length && filterContext.removeAvailability(item.value);
+    }
+
+    if (type === "SIZE") {
+      const length = filterContext.filters.sizes.length;
+      length && filterContext.removeSize(item.value);
+    }
+  };
+
+  useEffect(() => {
+    if (isChecked) {
+      onAddFilter();
+    } else {
+      onRemoveFilter();
+    }
+  }, [isChecked]);
 
   return (
     <li className="list-item">

@@ -1,68 +1,50 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./Products.style.css";
+import FilterContext from "../../context/filter-context";
 
-import { filters, products } from "../../data";
-import { Product, Sidebar } from "../../components";
-import { Select } from "../../ui";
+import { products } from "../../data";
+import { Product } from "../../components";
 
 const Products = () => {
-  const [isActiveFilters, setIsActiveFilters] = useState(false);
-  const availability = filters.availability;
-  const sizes = filters.sizes;
-  const colors = filters.colors;
+  const [updatedProducts, setUpdatedProducts] = useState(products);
+  const filterContext = useContext(FilterContext);
+  const { availability, colors, sizes } = filterContext.filters;
+  const [filterAvailability, setFilterAvailability] = useState(availability);
+  const [filterSizes, setFilterColors] = useState(sizes);
 
-  const options = [
-    { value: "l2hprice", name: "Low To High Price" },
-    { value: "date", name: "Date" },
-  ];
+  useEffect(() => {
+    const checkSizes = (product) => {
+      for (let s of product.sizes) {
+        if (filterSizes.includes(s)) {
+          return true;
+        }
+      }
+      return false;
+    };
 
-  const handleFilterClick = (e) => {
-    e.preventDefault();
-    setIsActiveFilters(!isActiveFilters);
-  };
+    const newProducts = products.filter((product) => {
+      const availabilityConditions =
+        filterAvailability.length === 2 ||
+        filterAvailability.length === 0 ||
+        filterAvailability.includes(product.Stock);
+
+      const sizesConditions = filterSizes.length === 0 || checkSizes(product);
+      return availabilityConditions && sizesConditions;
+    });
+    setUpdatedProducts(newProducts);
+  }, [
+    filterAvailability.length,
+    filterAvailability,
+    filterSizes.length,
+    filterSizes,
+  ]);
 
   return (
-    <section id="products">
-      <div className="products container">
-        <div className="products__header">
-          <div className="products__header__path">
-            <a href="" className="products__header__path-link">
-              home
-            </a>
-            <span className="products__header__path-link">/</span>
-            <a href="" className="products__header__path-link">
-              products
-            </a>
-          </div>
-          <h2 className="products__header-title">All Products</h2>
-        </div>
-        <div className="products__content">
-          <Sidebar
-            isActiveFilters={isActiveFilters}
-            availability={availability}
-            sizes={sizes}
-            colors={colors}
-            onHandleFilterClick={handleFilterClick}
-          />
-          <div className="products__content__main">
-            <div className="products__content__main__header">
-              <button className="btn-select" onClick={handleFilterClick}>
-                Filter
-              </button>
-              <Select items={options} />
-              <span className="products__content__main__header-counter">
-                33 products
-              </span>
-            </div>
-            <div className="grid">
-              {products.map((product) => (
-                <Product key={product.id} product={product} />
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <div className="grid">
+      {updatedProducts.map((product) => (
+        <Product key={product.id} product={product} />
+      ))}
+    </div>
   );
 };
 

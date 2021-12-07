@@ -36,7 +36,7 @@ const Sidebar = ({
                 title="availability"
                 height={availability.length * 30 - 12}
               >
-                <CheckboxList list={availability} />
+                <CheckboxList type="AVAILABILITY" list={availability} />
               </ButtonCollapsing>
             </div>
             <div className="filters__form-control">
@@ -53,7 +53,7 @@ const Sidebar = ({
             </div>
             <div className="filters__form-control">
               <ButtonCollapsing title="size" height={sizes.length * 30 - 12}>
-                <CheckboxList list={sizes} />
+                <CheckboxList type="SIZE" list={sizes} />
               </ButtonCollapsing>
             </div>
           </form>

@@ -3,11 +3,11 @@ import "./CheckboxList.style.css";
 
 import Checkbox from "./Checkbox";
 
-const CheckboxList = ({ list }) => {
+const CheckboxList = ({ type, list }) => {
   return (
     <ul className="list">
       {list.map((item, id) => (
-        <Checkbox key={id} item={item} />
+        <Checkbox key={id} type={type} item={item} />
       ))}
     </ul>
   );
