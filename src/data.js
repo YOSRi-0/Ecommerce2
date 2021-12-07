@@ -4,9 +4,9 @@ export const filters = {
     { id: 2, value: "out-of-stock", name: "Out of stock" },
   ],
   sizes: [
-    { id: 1, value: "small", name: "small" },
-    { id: 2, value: "medium", name: "medium" },
-    { id: 3, value: "large", name: "large" },
+    { id: 3, value: "small", name: "small" },
+    { id: 4, value: "medium", name: "medium" },
+    { id: 5, value: "large", name: "large" },
   ],
   colors: ["red", "orange", "green"],
 };

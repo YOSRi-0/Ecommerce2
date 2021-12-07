@@ -2,19 +2,21 @@ import React, { useState } from "react";
 import "./Checkbox.style.css";
 
 const Checkbox = ({ item }) => {
-  const [checked, setChecked] = useState(false);
+  const [isChecked, setIsChecked] = useState(false);
 
-  const handleClick = (e) => {
-    setChecked(() => e.target.checked);
+  const handleClick = () => {
+    setIsChecked(!isChecked);
   };
+  console.log(isChecked);
 
   return (
     <li className="list-item">
-      <label htmlFor={item.id} className="list-item-wrapper">
+      <label htmlFor={item.value} className="list-item-wrapper">
         <input
+          id={item.value}
           className="list-item-input"
           type="checkbox"
-          value={item.value}
+          checked={isChecked}
           onChange={handleClick}
         />
         <span className="list-item-checkbox"></span>
