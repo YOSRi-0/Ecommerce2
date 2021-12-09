@@ -5,6 +5,7 @@ export default createContext({
     availability: [],
     colors: [],
     sizes: [],
+    range: 0,
   },
   addAvailability: (availability) => {},
   removeAvailability: (availability) => {},
@@ -12,4 +13,5 @@ export default createContext({
   removeColor: (color) => {},
   addSize: (size) => {},
   removeSize: (size) => {},
+  updateRange: (range) => {},
 });

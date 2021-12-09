@@ -4,6 +4,7 @@ export const ADD_COLOR = "ADD_COLOR";
 export const REMOVE_COLOR = "REMOVE_COLOR";
 export const ADD_SIZE = "ADD_SIZE";
 export const REMOVE_SIZE = "REMOVE_SIZE";
+export const UPDATE_RANGE = "UPDATE_RANGE";
 
 const addAvailability = (availability, state) => {
   const updatedFilters = state.filters;
@@ -81,7 +82,7 @@ const addSize = (size, state) => {
 
   // console.log("state: ", { ...state.filters });
 
-  return { ...state, filter: updatedFilters };
+  return { ...state, filters: updatedFilters };
 };
 const removeSize = (size, state) => {
   const updatedFilters = state.filters;
@@ -96,7 +97,17 @@ const removeSize = (size, state) => {
 
   // console.log("state: ", { ...state.filters });
 
-  return { ...state, filter: updatedFilters };
+  return { ...state, filters: updatedFilters };
+};
+
+const updateRange = (range, state) => {
+  const updatedFilters = state.filters;
+
+  // console.log(updatedFilters);
+  updatedFilters.range = range;
+  console.log(updatedFilters.range);
+
+  return { ...state, filters: updatedFilters };
 };
 
 // UTILITY FUNCTION
@@ -119,6 +130,8 @@ export const filterReducer = (state, action) => {
       return addSize(action.size, state);
     case REMOVE_SIZE:
       return removeSize(action.size, state);
+    case UPDATE_RANGE:
+      return updateRange(action.range, state);
     default:
       return state;
   }

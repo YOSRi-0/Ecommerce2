@@ -7,16 +7,18 @@ import { Product } from "../../components";
 
 const Products = () => {
   const [updatedProducts, setUpdatedProducts] = useState(products);
-  const filterContext = useContext(FilterContext);
-  const { availability, colors, sizes } = filterContext.filters;
-  const [filterAvailability, setFilterAvailability] = useState(availability);
-  const [filterSizes, setFilterSizes] = useState(sizes);
-  const [filterColors, setFilterColors] = useState(colors);
+  const {
+    filters: { availability, colors, sizes, range },
+  } = useContext(FilterContext);
+  // const { availability, colors, sizes } = filterContext.filters;
+  // const [filterAvailability, setFilterAvailability] = useState(availability);
+  // const [filterSizes, setFilterSizes] = useState(sizes);
+  // const [filterColors, setFilterColors] = useState(colors);
 
   useEffect(() => {
     const checkSizes = (product) => {
       for (let size of product.sizes) {
-        if (filterSizes.includes(size)) {
+        if (sizes.includes(size)) {
           return true;
         }
       }
@@ -25,7 +27,7 @@ const Products = () => {
 
     const checkColors = (product) => {
       for (let color of product.colors) {
-        if (filterColors.includes(color)) {
+        if (colors.includes(color)) {
           return true;
         }
       }
@@ -34,23 +36,28 @@ const Products = () => {
 
     const newProducts = products.filter((product) => {
       const availabilityConditions =
-        filterAvailability.length === 2 ||
-        filterAvailability.length === 0 ||
-        filterAvailability.includes(product.Stock);
+        availability.length === 2 ||
+        availability.length === 0 ||
+        availability.includes(product.Stock);
 
-      const sizesConditions = filterSizes.length === 0 || checkSizes(product);
-      const colorsConditions =
-        filterColors.length === 0 || checkColors(product);
-      return availabilityConditions && sizesConditions && colorsConditions;
+      const sizesConditions = sizes.length === 0 || checkSizes(product);
+      const colorsConditions = colors.length === 0 || checkColors(product);
+      return (
+        availabilityConditions &&
+        sizesConditions &&
+        colorsConditions &&
+        range >= product.price
+      );
     });
     setUpdatedProducts(newProducts);
   }, [
-    filterAvailability.length,
-    filterAvailability,
-    filterSizes.length,
-    filterSizes,
-    filterColors.length,
-    filterColors,
+    availability,
+    availability.length,
+    sizes,
+    sizes.length,
+    colors,
+    colors.length,
+    range,
   ]);
 
   return (

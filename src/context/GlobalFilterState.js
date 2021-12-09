@@ -9,14 +9,16 @@ import {
   REMOVE_SIZE,
   ADD_COLOR,
   REMOVE_COLOR,
+  UPDATE_RANGE,
 } from "./reducers";
 
-const GlobalFilterState = (props) => {
+const GlobalFilterState = ({ children }) => {
   const [filterState, dispatch] = useReducer(filterReducer, {
     filters: {
       availability: [],
       colors: [],
       sizes: [],
+      range: 0,
     },
   });
 
@@ -41,6 +43,10 @@ const GlobalFilterState = (props) => {
     dispatch({ type: REMOVE_COLOR, color });
   };
 
+  const updateRange = (range) => {
+    dispatch({ type: UPDATE_RANGE, range });
+  };
+
   return (
     <FilterContext.Provider
       value={{
@@ -51,9 +57,10 @@ const GlobalFilterState = (props) => {
         removeColor: removeColor,
         addSize: addSize,
         removeSize: removeSize,
+        updateRange: updateRange,
       }}
     >
-      {props.children}
+      {children}
     </FilterContext.Provider>
   );
 };
