@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import "./SingleProduct.style.css";
 
 import { Color } from "../../ui";
@@ -22,17 +22,17 @@ const SingleProduct = () => {
       <section id="product">
         <div className="product container">
           <div className="product__path">
-            <a href="" className="product__path-link">
+            <Link to="/" className="product__path-link">
               home
-            </a>
+            </Link>
             <span className="product__path-link">/</span>
-            <a href="" className="product__path-link">
+            <Link to="/products" className="product__path-link">
               products
-            </a>
+            </Link>
             <span className="product__path-link">/</span>
-            <a href="" className="product__path-link">
+            <Link to={`/products/${id}`} className="product__path-link">
               {product.title}
-            </a>
+            </Link>
           </div>
           <div className="product__content">
             <div className="product__content__block">

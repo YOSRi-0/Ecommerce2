@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Cart.style.css";
 
 const Cart = () => {
@@ -6,13 +7,13 @@ const Cart = () => {
     <section id="cart">
       <div className="cart container">
         <div className="cart__path">
-          <a href="" className="cart__path-link">
+          <Link to="/" className="cart__path-link">
             home
-          </a>
+          </Link>
           <span className="cart__path-link">/</span>
-          <a href="" className="cart__path-link">
+          <Link to="/cart" className="cart__path-link">
             cart
-          </a>
+          </Link>
         </div>
         <div className="cart__content">
           <div className="cart__products">

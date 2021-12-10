@@ -5,6 +5,7 @@ import { filters } from "../data";
 import { Sidebar, Products } from "../components";
 import { Select } from "../ui";
 import GlobalFilterState from "../context/GlobalFilterState";
+import { Link } from "react-router-dom";
 
 const ProductsPage = () => {
   const [isActiveFilters, setIsActiveFilters] = useState(false);
@@ -28,13 +29,13 @@ const ProductsPage = () => {
         <div className="products container">
           <div className="products__header">
             <div className="products__header__path">
-              <a href="" className="products__header__path-link">
+              <Link to="/" className="products__header__path-link">
                 home
-              </a>
+              </Link>
               <span className="products__header__path-link">/</span>
-              <a href="" className="products__header__path-link">
+              <Link to="/products" className="products__header__path-link">
                 products
-              </a>
+              </Link>
             </div>
             <h2 className="products__header-title">All Products</h2>
           </div>
