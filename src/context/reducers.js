@@ -1,3 +1,5 @@
+import GetIndex from "../utils/GetIndex";
+
 export const ADD_AVAILABILITY = "ADD_AVAILABILITY";
 export const REMOVE_AVAILABILITY = "REMOVE_AVAILABILITY";
 export const ADD_COLOR = "ADD_COLOR";
@@ -8,7 +10,7 @@ export const UPDATE_RANGE = "UPDATE_RANGE";
 
 const addAvailability = (availability, state) => {
   const updatedFilters = state.filters;
-  const updatedFiltersIndex = getFilterIndex(
+  const updatedFiltersIndex = GetIndex(
     availability,
     updatedFilters.availability
   );
@@ -26,7 +28,7 @@ const addAvailability = (availability, state) => {
 
 const removeAvailability = (availability, state) => {
   const updatedFilters = state.filters;
-  const updatedFiltersIndex = getFilterIndex(
+  const updatedFiltersIndex = GetIndex(
     availability,
     updatedFilters.availability
   );
@@ -43,7 +45,7 @@ const removeAvailability = (availability, state) => {
 
 const addColor = (color, state) => {
   const updatedFilters = state.filters;
-  const updatedFiltersIndex = getFilterIndex(color, updatedFilters.colors);
+  const updatedFiltersIndex = GetIndex(color, updatedFilters.colors);
 
   if (updatedFiltersIndex < 0) {
     updatedFilters.colors.push(color);
@@ -58,7 +60,7 @@ const addColor = (color, state) => {
 
 const removeColor = (color, state) => {
   const updatedFilters = state.filters;
-  const updatedFiltersIndex = getFilterIndex(color, updatedFilters.colors);
+  const updatedFiltersIndex = GetIndex(color, updatedFilters.colors);
 
   if (updatedFiltersIndex < 0) {
     console.log("item does not exist");
@@ -72,7 +74,7 @@ const removeColor = (color, state) => {
 
 const addSize = (size, state) => {
   const updatedFilters = state.filters;
-  const updatedFiltersIndex = getFilterIndex(size, updatedFilters.sizes);
+  const updatedFiltersIndex = GetIndex(size, updatedFilters.sizes);
 
   if (updatedFiltersIndex < 0) {
     updatedFilters.sizes.push(size);
@@ -86,7 +88,7 @@ const addSize = (size, state) => {
 };
 const removeSize = (size, state) => {
   const updatedFilters = state.filters;
-  const updatedFiltersIndex = getFilterIndex(size, updatedFilters.sizes);
+  const updatedFiltersIndex = GetIndex(size, updatedFilters.sizes);
 
   if (updatedFiltersIndex < 0) {
     console.log("item exists");
@@ -105,15 +107,8 @@ const updateRange = (range, state) => {
 
   // console.log(updatedFilters);
   updatedFilters.range = range;
-  console.log(updatedFilters.range);
 
   return { ...state, filters: updatedFilters };
-};
-
-// UTILITY FUNCTION
-const getFilterIndex = (filter, filters) => {
-  const index = filters.findIndex((f) => f === filter);
-  return index;
 };
 
 export const filterReducer = (state, action) => {

@@ -204,6 +204,14 @@
   margin-right: 0.5rem;
 }
 
+.empty-message {
+  display: inline-block;
+  text-align: center;
+  text-transform: capitalize;
+  width: 100%;
+  font-weight: 500;
+}
+
 @media screen and (min-width: 768px) {
   .cart__content {
     flex-direction: row;

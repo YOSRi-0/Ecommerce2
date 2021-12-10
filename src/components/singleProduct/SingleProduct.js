@@ -1,13 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import "./SingleProduct.style.css";
 
 import { Color } from "../../ui";
 import { products } from "../../data";
+import CartContext from "../../context/cart-context/CartContext";
 
 const SingleProduct = () => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
+  const { addToCart, cartItems } = useContext(CartContext);
 
   useEffect(() => {
     const getProduct = () => {
@@ -75,7 +77,12 @@ const SingleProduct = () => {
                 </div>
               </div>
               <div className="product__content__block__row">
-                <button className="btn-add-to-cart">Add to cart</button>
+                <button
+                  className="btn-add-to-cart"
+                  onClick={() => addToCart({ ...product, amount: 1 })}
+                >
+                  Add to cart
+                </button>
               </div>
             </div>
           </div>
