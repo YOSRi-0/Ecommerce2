@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./ProductsPage.style.css";
 
-import { filters } from "../data";
+import { filters, products } from "../data";
 import { Sidebar, Products } from "../components";
 import { Select } from "../ui";
 import GlobalFilterState from "../context/GlobalFilterState";
@@ -54,10 +54,10 @@ const ProductsPage = () => {
                 </button>
                 <Select items={options} />
                 <span className="products__content__main__header-counter">
-                  33 products
+                  {products.length} products
                 </span>
               </div>
-              <Products />
+              <Products products={products} />
             </div>
           </div>
         </div>

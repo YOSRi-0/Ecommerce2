@@ -2,10 +2,9 @@ import React, { useContext, useEffect, useState } from "react";
 import "./Products.style.css";
 import FilterContext from "../../context/filter-context";
 
-import { products } from "../../data";
 import { Product } from "../../components";
 
-const Products = () => {
+const Products = ({ products }) => {
   const [updatedProducts, setUpdatedProducts] = useState(products);
   const {
     filters: { availability, colors, sizes, range },
