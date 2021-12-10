@@ -19,7 +19,7 @@ export const products = [
     image:
       "https://cdn.shopify.com/s/files/1/0339/0901/products/shopdressup_nashville_baseball_cap_1800x1800.jpg?v=1635033011",
     Stock: "in-stock",
-    sizes: ["small"],
+    sizes: ["small", "medium"],
     colors: ["red"],
   },
   {
