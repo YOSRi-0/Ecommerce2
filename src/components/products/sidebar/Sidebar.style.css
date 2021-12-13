@@ -22,8 +22,8 @@
   margin-top: 75px;
   padding: 3rem 1rem 10rem;
   transform: translateX(-100%);
-  overflow: hidden;
-  overflow-y: scroll;
+  overflow: auto;
+  /* overflow-y: scroll; */
 }
 
 .products__content__sidebar.active {
@@ -45,7 +45,7 @@
   /* flex-direction: column; */
   /* align-items: center; */
   overflow-y: auto;
-  overflow: scroll;
+  /* overflow: scroll; */
 }
 
 .filters__form-control {
