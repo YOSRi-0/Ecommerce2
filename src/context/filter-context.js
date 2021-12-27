@@ -2,9 +2,9 @@ import React, { createContext } from "react";
 
 export default createContext({
   filters: {
-    availability: [],
-    colors: [],
-    sizes: [],
+    availability: null,
+    color: "",
+    size: "",
     range: 0,
   },
   addAvailability: (availability) => {},

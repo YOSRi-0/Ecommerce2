@@ -4,9 +4,45 @@
   grid-template-columns: repeat(2, 49%);
 }
 
+.products__content {
+  display: flex;
+  width: 100%;
+}
+
+.products__content__main {
+  flex: 1;
+}
+
+.products__header__path {
+}
+
+.products__content__main__header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.products__content__main__header-counter {
+  text-align: center;
+  margin: 1rem auto 0;
+}
+
 @media screen and (min-width: 768px) {
   .grid {
     justify-content: space-between;
     grid-template-columns: repeat(3, 32%);
+  }
+
+  .products__content__main__header-counter {
+    display: inline-block;
+    font-size: 0.8765rem;
+    color: #424242;
+  }
+
+  .products__content__main__header-counter {
+    margin: 0;
+    order: -1;
   }
 }

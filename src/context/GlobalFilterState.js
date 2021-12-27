@@ -15,9 +15,9 @@ import {
 const GlobalFilterState = ({ children }) => {
   const [filterState, dispatch] = useReducer(filterReducer, {
     filters: {
-      availability: [],
-      colors: [],
-      sizes: [],
+      availability: null,
+      colors: "",
+      sizes: "",
       range: 0,
     },
   });
@@ -25,8 +25,8 @@ const GlobalFilterState = ({ children }) => {
   const addAvailability = (availability) => {
     dispatch({ type: ADD_AVAILABILITY, availability });
   };
-  const removeAvailability = (availability) => {
-    dispatch({ type: REMOVE_AVAILABILITY, availability });
+  const removeAvailability = () => {
+    dispatch({ type: REMOVE_AVAILABILITY});
   };
 
   const addSize = (size) => {

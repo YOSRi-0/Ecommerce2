@@ -24,26 +24,6 @@
   margin-bottom: 2rem;
 }
 
-.products__content {
-  display: flex;
-  width: 100%;
-}
-
-.products__content__main {
-  flex: 1;
-}
-
-.products__header__path {
-}
-
-.products__content__main__header {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  margin: 1rem 0;
-}
-
 /* ************************* TYPOGRAPHY *********************** */
 
 .products__header__path-link {
@@ -79,11 +59,6 @@
   text-align: left;
 }
 
-.products__content__main__header-counter {
-  text-align: center;
-  margin: 1rem auto 0;
-}
-
 @media screen and (min-width: 768px) {
   .products.container {
     padding: 2rem 2rem 3rem;
@@ -98,14 +73,4 @@
     display: none;
   }
 
-  .products__content__main__header-counter {
-    display: inline-block;
-    font-size: 0.8765rem;
-    color: #424242;
-  }
-
-  .products__content__main__header-counter {
-    margin: 0;
-    order: -1;
-  }
 }

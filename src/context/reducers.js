@@ -10,94 +10,104 @@ export const UPDATE_RANGE = "UPDATE_RANGE";
 
 const addAvailability = (availability, state) => {
   const updatedFilters = state.filters;
-  const updatedFiltersIndex = GetIndex(
-    availability,
-    updatedFilters.availability
-  );
+  //const updatedFiltersIndex = GetIndex(
+  //  availability,
+  //  updatedFilters.availability
+  //);
 
-  if (updatedFiltersIndex < 0) {
-    updatedFilters.availability.push(availability);
-  } else {
-    console.log("item exists");
-  }
+  //if (updatedFiltersIndex < 0) {
+  //  updatedFilters.availability.push(availability);
+  //} else {
+  //  console.log("item exists");
+  //}
 
   // console.log("state: ", { ...state.filters });
 
+  updatedFilters.availability = availability
+  console.log(availability)
   return { ...state, filters: updatedFilters };
 };
 
-const removeAvailability = (availability, state) => {
+const removeAvailability = (state) => {
   const updatedFilters = state.filters;
-  const updatedFiltersIndex = GetIndex(
-    availability,
-    updatedFilters.availability
-  );
+//  const updatedFiltersIndex = GetIndex(
+//    availability,
+//    updatedFilters.availability
+//  );
+//
+//  if (updatedFiltersIndex < 0) {
+//    console.log("item does not exist");
+//    return;
+//  }
+//
+//  updatedFilters.availability.splice(updatedFiltersIndex, 1);
 
-  if (updatedFiltersIndex < 0) {
-    console.log("item does not exist");
-    return;
-  }
-
-  updatedFilters.availability.splice(updatedFiltersIndex, 1);
+  updatedFilters.availability = null
 
   return { ...state, filters: updatedFilters };
 };
 
 const addColor = (color, state) => {
   const updatedFilters = state.filters;
-  const updatedFiltersIndex = GetIndex(color, updatedFilters.colors);
-
-  if (updatedFiltersIndex < 0) {
-    updatedFilters.colors.push(color);
-  } else {
-    console.log("item exists");
-  }
-
+//  const updatedFiltersIndex = GetIndex(color, updatedFilters.colors);
+//
+//  if (updatedFiltersIndex < 0) {
+//    updatedFilters.colors.push(color);
+//  } else {
+//    console.log("item exists");
+//  }
+//
   // console.log("state: ", { ...state.filters });
+  updatedFilters.color = color
 
   return { ...state, filters: updatedFilters };
 };
 
 const removeColor = (color, state) => {
   const updatedFilters = state.filters;
-  const updatedFiltersIndex = GetIndex(color, updatedFilters.colors);
+//  const updatedFiltersIndex = GetIndex(color, updatedFilters.colors);
+//
+//  if (updatedFiltersIndex < 0) {
+//    console.log("item does not exist");
+//    return;
+//  }
+//
+//  updatedFilters.colors.splice(updatedFiltersIndex, 1);
 
-  if (updatedFiltersIndex < 0) {
-    console.log("item does not exist");
-    return;
-  }
-
-  updatedFilters.colors.splice(updatedFiltersIndex, 1);
+  updatedFilters.color = ""
 
   return { ...state, filters: updatedFilters };
 };
 
 const addSize = (size, state) => {
   const updatedFilters = state.filters;
-  const updatedFiltersIndex = GetIndex(size, updatedFilters.sizes);
+  // const updatedFiltersIndex = GetIndex(size, updatedFilters.sizes);
 
-  if (updatedFiltersIndex < 0) {
-    updatedFilters.sizes.push(size);
-  } else {
-    console.log("item exists");
-  }
-
+  // if (updatedFiltersIndex < 0) {
+  //   updatedFilters.sizes.push(size);
+  // } else {
+  //   console.log("item exists");
+  // }
   // console.log("state: ", { ...state.filters });
+
+  updatedFilters.size = size
 
   return { ...state, filters: updatedFilters };
 };
 const removeSize = (size, state) => {
   const updatedFilters = state.filters;
-  const updatedFiltersIndex = GetIndex(size, updatedFilters.sizes);
+  //const updatedFiltersIndex = GetIndex(size, updatedFilters.sizes);
 
-  if (updatedFiltersIndex < 0) {
-    console.log("item exists");
-    return;
-  }
+  //if (updatedFiltersIndex < 0) {
+  //  console.log("item exists");
+  //  return;
+  //}
 
-  updatedFilters.sizes.splice(updatedFiltersIndex, 1);
+  //updatedFilters.sizes.splice(updatedFiltersIndex, 1);
 
   // console.log("state: ", { ...state.filters });
+  
+  updatedFilters.size = ""
 
   return { ...state, filters: updatedFilters };
 };
@@ -116,7 +126,7 @@ export const filterReducer = (state, action) => {
     case ADD_AVAILABILITY:
       return addAvailability(action.availability, state);
     case REMOVE_AVAILABILITY:
-      return removeAvailability(action.availability, state);
+      return removeAvailability(state);
     case ADD_COLOR:
       return addColor(action.color, state);
     case REMOVE_COLOR:

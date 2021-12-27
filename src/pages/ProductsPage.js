@@ -1,22 +1,16 @@
 import React, { useState } from "react";
 import "./ProductsPage.style.css";
 
-import { filters, products } from "../data";
+import { filters } from "../data";
 import { Sidebar, Products } from "../components";
-import { Select } from "../ui";
 import GlobalFilterState from "../context/GlobalFilterState";
 import { Link } from "react-router-dom";
 
-const ProductsPage = () => {
+const ProductsPage = ({ fetchProducts }) => {
   const [isActiveFilters, setIsActiveFilters] = useState(false);
-  const availability = filters.availability;
-  const sizes = filters.sizes;
-  const colors = filters.colors;
-
-  const options = [
-    { value: "l2hprice", name: "Low To High Price" },
-    { value: "date", name: "Date" },
-  ];
+  const availabilityFilter = filters.availability;
+  const sizesFilter = filters.sizes;
+  const colorsFilter = filters.colors;
 
   const handleFilterClick = (e) => {
     e.preventDefault();
@@ -42,23 +36,12 @@ const ProductsPage = () => {
           <div className="products__content">
             <Sidebar
               isActiveFilters={isActiveFilters}
-              availability={availability}
-              sizes={sizes}
-              colors={colors}
+              availability={availabilityFilter}
+              sizes={sizesFilter}
+              colors={colorsFilter}
               onHandleFilterClick={handleFilterClick}
             />
-            <div className="products__content__main">
-              <div className="products__content__main__header">
-                <button className="btn-select" onClick={handleFilterClick}>
-                  Filter
-                </button>
-                <Select items={options} />
-                <span className="products__content__main__header-counter">
-                  {products.length} products
-                </span>
-              </div>
-              <Products products={products} />
-            </div>
+          <Products fetchProducts={fetchProducts} />
           </div>
         </div>
       </section>

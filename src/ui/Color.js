@@ -3,29 +3,36 @@ import "./Color.style.css";
 import FilterContext from "../context/filter-context";
 
 const Color = ({ color }) => {
-  const [isActive, setIsActive] = useState(false);
   const filterContext = useContext(FilterContext);
 
+  
   const onAddFilter = () => {
     filterContext.addColor(color);
   };
 
-  const onRemoveFilter = () => {
-    const length = filterContext.filters.colors.length;
-    length && filterContext.removeColor(color);
-  };
+//  const onRemoveFilter = () => {
+//    const length = filterContext.filters.colors.length;
+//  };
+//
+//  useEffect(() => {
+//    isActive ? onAddFilter() : onRemoveFilter();
+//  }, [isActive]);
+//    length && filterContext.removeColor(color);
 
-  useEffect(() => {
-    isActive ? onAddFilter() : onRemoveFilter();
-  }, [isActive]);
+  const handleChange = (e) => {
+    onAddFilter()
+  }
 
   return (
     <>
-      <div
-        onClick={() => setIsActive(!isActive)}
+      <input
+        type="radio"
+        id={color} 
+        onChange={handleChange}
         style={{ backgroundColor: color }}
-        className={`color ${isActive ? "active" : ""}`}
-      ></div>
+        className="color"
+        name="color"
+      />
     </>
   );
 };
