@@ -21,11 +21,9 @@ const Products = ({fetchProducts}) => {
     color && (params["color"] = color)
     size && (params["size"] = size)
     availability !== null && (params["availability"] = availability)
-    range && (params["range"] = range)
-    console.log("params", params)
+    range && range < 300 && (params["range"] = range)
     fetchProducts(params)
     .then(res => {
-        console.log(res.data)
         // SET IT TO WORK WITH ASYNCHRONIOUS CODE
         setProducts(res.data)
       })

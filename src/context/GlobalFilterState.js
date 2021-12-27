@@ -18,7 +18,7 @@ const GlobalFilterState = ({ children }) => {
       availability: null,
       colors: "",
       sizes: "",
-      range: 0,
+      range: 300,
     },
   });
 

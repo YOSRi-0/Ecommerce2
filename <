@@ -57,7 +57,7 @@ const SingleProduct = ({ fetchProduct }) => {
                 <p className="product__content__block__row-filter">color</p>
                 <div className="colors">
                   {product.colors?.map((color, idx) => (
-                    <Color key={idx} color={color.value} />
+                    <Color key={idx} color={color} />
                   ))}
                 </div>
               </div>
@@ -65,12 +65,12 @@ const SingleProduct = ({ fetchProduct }) => {
                 <p className="product__content__block__row-filter">size</p>
                 <div className="size__buttons">
                   {/* <button className="btn-size active">Small</button> */}
-                  {product.sizes?.map((size, idx) => (
+                  {product.sizes.map((size, idx) => (
                     <button
                       key={idx}
                       className={`btn-size ${idx === 0 && "active"}`}
                     >
-                      {size.value}
+                      {size}
                     </button>
                   ))}
                 </div>

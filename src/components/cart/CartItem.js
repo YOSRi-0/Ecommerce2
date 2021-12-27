@@ -50,11 +50,11 @@ const CartItem = ({ index, item }) => {
         </div>
         <div className="cart__products__item__row">
           <p className="cart__products__item__row-key">color</p>
-          <p className="cart__products__item__row-value">{item.colors[0]}</p>
+          <p className="cart__products__item__row-value">{item.colors[0].value}</p>
         </div>
         <div className="cart__products__item__row">
           <p className="cart__products__item__row-key">size</p>
-          <p className="cart__products__item__row-value">{item.sizes[0]}</p>
+          <p className="cart__products__item__row-value">{item.sizes[0].value}</p>
         </div>
         <div className="cart__products__item__row">
           <div className="cart__products__item__row-amount">

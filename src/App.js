@@ -17,7 +17,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/products" element={<ProductsPage fetchProducts={api.getAllProducts}/>} />
-            <Route path="/products/:id" element={<SingleProduct />} />
+            <Route path="/products/:id" element={<SingleProduct fetchProduct={api.getProduct} />} />
             <Route path="/cart" element={<Cart />} />
           </Routes>
         </Router>

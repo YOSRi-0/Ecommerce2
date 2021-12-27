@@ -27,4 +27,8 @@ export default class Api {
     }
       return this.init().get("/products/q", {params})
   }
+
+  getProduct = (productId) => {
+    return this.init().get(`/products/${productId}`)
+  }
 }
